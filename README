@@ -1,0 +1,11 @@
+This plugin requires jQuery 1.4.3pre/+
+
+Usage:
+
+$('#myDiv').css('rotate', 90);
+$('#myDiv').animate({rotate: 180});
+
+Limitations:
+- the only accpeted value _yet_ are degrees numbers (90, not '90deg')
+- transformOrigin is not accessible
+- IE will often disappoint you (and there's nothing I can do about it)
