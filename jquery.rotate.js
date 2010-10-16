@@ -41,7 +41,7 @@ $.cssHooks.rotate = {
       elem.style[supportTransform] = 'rotate('+ value +'rad)';
       
     } else if (_support.matrixFilter) {
-      rad = degToRad(value);
+      rad = toRadian(value);
       cos = Math.cos(rad);
       sin = Math.sin(rad);
       elem.style.filter = [
