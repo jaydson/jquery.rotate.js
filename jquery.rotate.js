@@ -1,3 +1,13 @@
+/*
+ * rotate: A jQuery cssHooks adding a cross browser 'rotate' property to $.fn.css() and $.fn.animate()
+ *
+ * Copyright (c) 2010 Louis-Rémi Babé
+ * Licensed under the MIT license.
+ * 
+ * This saved you an hour of work? 
+ * Send me music http://www.amazon.fr/wishlist/HNTU0468LQON
+ *
+ */
 (function($) {
   
 var div = document.createElement('div'),
