@@ -27,7 +27,7 @@ $.cssHooks.rotate = {
   set: function( elem, value, animate ) {
     var _support = support,
       supportTransform = _support.transform,
-      rad, cos, sin,
+      cos, sin,
       centerOrigin;
     
     if (typeof value === 'string') {
@@ -41,9 +41,8 @@ $.cssHooks.rotate = {
       elem.style[supportTransform] = 'rotate('+ value +'rad)';
       
     } else if (_support.matrixFilter) {
-      rad = toRadian(value);
-      cos = Math.cos(rad);
-      sin = Math.sin(rad);
+      cos = Math.cos(value);
+      sin = Math.sin(value);
       elem.style.filter = [
         "progid:DXImageTransform.Microsoft.Matrix(",
           "M11="+cos+",",
@@ -81,9 +80,8 @@ function toRadian(value) {
     return parseInt(value,10) * (Math.PI * 2 / 360);
   } else if (value.indexOf("grad") != -1) {
     return parseInt(value,10) * (Math.PI/200);
-  } else {
-    return parseFloat(value,10);
   }
+  return parseFloat(value,10);
 }
 
 $.rotate = {
