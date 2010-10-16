@@ -4,7 +4,16 @@ Usage:
 ------
 
 $('#myDiv').css('rotate', '90deg');
-$('#myDiv').animate({rotate: '180deg'});
+$('#myDiv').animate({rotate: '180deg'});bravo
+
+Good to know:
+-------------
+
+The following line of code always returns computed rotation in radians
+$('#myDiv').css('rotate');
+A radian to degree function is included, free of charge:
+$.rotate.radToDeg( Math.PI ) === 180
+
 
 Limitations:
 ------------
