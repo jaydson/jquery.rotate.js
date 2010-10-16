@@ -20,7 +20,7 @@ support.transform =
   (divStyle.WebkitTransform === ''? 'WebkitTransform' : 
   (divStyle.OTransform === ''? 'OTransform' :
   false));
-support.matrixFilter = !support.tranfsorm && divStyle.filter === '';
+support.matrixFilter = !support.transform && divStyle.filter === '';
 
 $.cssNumber.rotate = true;
 $.cssHooks.rotate = {
