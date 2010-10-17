@@ -24,7 +24,7 @@ support.matrixFilter = !support.transform && divStyle.filter === '';
 
 $.cssNumber.rotate = true;
 $.cssHooks.rotate = {
-  set: function( elem, value, animate ) {
+  set: function( elem, value ) {
     var _support = support,
       supportTransform = _support.transform,
       cos, sin,
@@ -33,6 +33,7 @@ $.cssHooks.rotate = {
     if (typeof value === 'string') {
       value = toRadian(value);
     }
+    
     $.data( elem, 'transform', {
       rotate: value
     });
@@ -53,8 +54,7 @@ $.cssHooks.rotate = {
         ")"
       ].join('');
       
-      centerOrigin = $.rotate.centerOrigin;
-      if(centerOrigin && !animate) {
+      if(centerOrigin = $.rotate.centerOrigin) {
         elem.style[centerOrigin == 'margin' ? 'marginLeft' : 'left'] = -(elem.offsetWidth/2) + (elem.clientWidth/2) + "px";
         elem.style[centerOrigin == 'margin' ? 'marginTop' : 'top'] = -(elem.offsetHeight/2) + (elem.clientHeight/2) + "px";
       }
@@ -69,7 +69,7 @@ $.cssHooks.rotate = {
   }
 }
 $.fx.step.rotate = function( fx ) {
-  $.cssHooks.rotate.set( fx.elem, fx.now+fx.unit, true );
+  $.cssHooks.rotate.set( fx.elem, fx.now+fx.unit );
 }
 
 function radToDeg( rad ) {
