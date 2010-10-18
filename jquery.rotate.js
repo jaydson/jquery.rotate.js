@@ -54,6 +54,7 @@ $.cssHooks.rotate = {
         ")"
       ].join('');
       
+      // From pbakaus's Transformie http://github.com/pbakaus/transformie
       if(centerOrigin = $.rotate.centerOrigin) {
         elem.style[centerOrigin == 'margin' ? 'marginLeft' : 'left'] = -(elem.offsetWidth/2) + (elem.clientWidth/2) + "px";
         elem.style[centerOrigin == 'margin' ? 'marginTop' : 'top'] = -(elem.offsetHeight/2) + (elem.clientHeight/2) + "px";
